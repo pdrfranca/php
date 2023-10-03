@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&display=swap');
+
+/* */
+* {
+    font-family: 'Manrope', sans-serif;
+    /*tamanho da caixa leva em consideracao o 
+    padding e border, menos margin */
+    box-sizing: border-box;
+    transition: all .3s;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00d9ff;
+    border-radius: 5px;
+    width: 10px;
+}
+
+body {
+    /*viewport (tamanho do nosso dispositivo)*/
+    height: 100vh;
+    margin: 0px;
+    /*divide a tela em linhas e colunas */
+    display: grid;
+    /*definindo tamanho das linhas fr(fragmento)*/
+    grid-template-rows: 120px 1fr 60px;
+    /*definindo tamanho das linhas*/
+    grid-template-columns: 1fr;
+    /*define qual área cada div irá ocupar*/
+    grid-template-areas:
+        "cabecalho"
+        "principal"
+        "rodape";
+
+}
+
+.cabecalho {
+    /*vinculando a classe cabecalho
+    a parte cabecalho do grid(apontando)*/
+    grid-area: cabecalho;
+    background-color: #00d9ff;
+    color: #000;
+    display: flex;
+    /*eixo principal*/
+    justify-content: space-around;
+    /*eixo secundário*/
+    align-items: center;
+    padding-bottom: 10px;
+    z-index: 1;
+    box-shadow: 0px 6px 9px 3px rgba(0, 0, 0, 0.75);
+}
+
+.cabecalho h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.cabecalho h2 {
+    margin: 0;
+    font-weight: 200;
+    font-size: 1.3rem;
+}
+
+.principal {
+    grid-area: principal;
+    height: calc(100vh - 180px);
+    background-color: #424242;
+    padding: 20px;
+
+}
+
+.conteudo {
+    /*mover elementos em relação a posição
+    original*/
+    position: relative;
+    height: 100%;
+    background-color: #CCC;
+    /*scroll para os elementos q excederem*/
+    overflow-y: scroll;
+    padding: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+.rodape {
+    grid-area: rodape;
+    background-color: #CCC;
+    display: flex;
+    /*eixo principal*/
+    justify-content: flex-end;
+    /*eixo principal*/
+    align-items: center;
+    font-size: 1.2rem;
+    padding-right: 20px;
+    color: #444;
+}
+
+.aulas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.aula {
+    flex-basis: 32%;
+}
+
+.aula h3 {
+    margin: 0;
+    color: #000;
+    background-color: #00d9ff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.aula ul {
+    margin: 0;
+    list-style: none;
+    padding: 10px;
+}
+
+.aula ul li {
+    padding: 7px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.aula ul li a {
+    text-decoration: none;
+    color: #222;
+    padding: 10px;
+    display: flex;
+}
+
+.aula ul li a:hover {
+    background-color: #00d9ff;
+    color: #000;
+}
